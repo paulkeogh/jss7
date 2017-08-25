@@ -197,7 +197,7 @@ public class SccpAddressImpl extends AbstractParameter implements XMLSerializabl
                 }
             }
 
-            if(this.ai.getGlobalTitleIndicator()!=GlobalTitleIndicator.NO_GLOBAL_TITLE_INCLUDED){
+            if(this.ai.getGlobalTitleIndicator() != null && this.ai.getGlobalTitleIndicator()!=GlobalTitleIndicator.NO_GLOBAL_TITLE_INCLUDED){
                 this.gt = factory.createGlobalTitle(this.ai.getGlobalTitleIndicator());
                 ((AbstractGlobalTitle) this.gt).decode(bin, factory, sccpProtocolVersion);
             }
