@@ -241,6 +241,10 @@ public class MAPProviderImpl implements MAPProvider, TCListener {
         //}
     }
 
+    public int getMAPDialogsCount() {
+        return dialogs == null ? 0 :this.dialogs.size();
+    }
+
     public void start() {
         this.tcapProvider.addTCListener(this);
     }
