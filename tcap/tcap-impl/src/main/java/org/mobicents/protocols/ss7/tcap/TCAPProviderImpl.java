@@ -760,7 +760,8 @@ public class TCAPProviderImpl implements TCAPProvider, SccpListener {
                                 .getGlobalTitle().getDigits() : null), message.getCallingPartyAddress().getSubsystemNumber(),
                                 dId);
                         di = (DialogImpl) this.getPreviewDialog(ky1, ky2, localAddress, remoteAddress, 0);
-                        setSsnToDialog(di, message.getCalledPartyAddress().getSubsystemNumber());
+                        if (di != null)
+                            setSsnToDialog(di, message.getCalledPartyAddress().getSubsystemNumber());
                     } else {
                         di = this.dialogs.get(dialogId);
                     }
@@ -826,7 +827,8 @@ public class TCAPProviderImpl implements TCAPProvider, SccpListener {
                                     .getGlobalTitle().getDigits() : null), message.getCallingPartyAddress()
                                     .getSubsystemNumber(), dId);
                             di = (DialogImpl) this.createPreviewDialog(ky, localAddress, remoteAddress, 0);
-                            setSsnToDialog(di, message.getCalledPartyAddress().getSubsystemNumber());
+                            if (di != null)
+                                setSsnToDialog(di, message.getCalledPartyAddress().getSubsystemNumber());
                         } else {
                             di = (DialogImpl) this.getNewDialog(localAddress, remoteAddress, message.getSls(), null);
                             setSsnToDialog(di, message.getCalledPartyAddress().getSubsystemNumber());
@@ -875,7 +877,8 @@ public class TCAPProviderImpl implements TCAPProvider, SccpListener {
                                 .getGlobalTitle().getDigits() : null), message.getCalledPartyAddress().getSubsystemNumber(),
                                 dialogId);
                         di = (DialogImpl) this.getPreviewDialog(ky, null, localAddress, remoteAddress, 0);
-                        setSsnToDialog(di, message.getCalledPartyAddress().getSubsystemNumber());
+                        if (di != null)
+                            setSsnToDialog(di, message.getCalledPartyAddress().getSubsystemNumber());
                     } else {
                         di = this.dialogs.get(dialogId);
                     }
@@ -912,7 +915,8 @@ public class TCAPProviderImpl implements TCAPProvider, SccpListener {
                                 .getGlobalTitle().getDigits() : null), message.getCalledPartyAddress().getSubsystemNumber(),
                                 dId);
                         di = (DialogImpl) this.getPreviewDialog(ky, null, localAddress, remoteAddress, 0);
-                        setSsnToDialog(di, message.getCalledPartyAddress().getSubsystemNumber());
+                        if (di != null)
+                            setSsnToDialog(di, message.getCalledPartyAddress().getSubsystemNumber());
                     } else {
                         di = this.dialogs.get(dialogId);
                     }
