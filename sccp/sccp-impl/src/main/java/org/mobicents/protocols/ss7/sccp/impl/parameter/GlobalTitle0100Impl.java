@@ -109,7 +109,7 @@ public class GlobalTitle0100Impl extends AbstractGlobalTitle implements GlobalTi
 
         this.encodingScheme = factory.createEncodingScheme((byte) (b & 0x0f));
         this.numberingPlan = NumberingPlan.valueOf((b & 0xf0) >> 4);
-        b = in.read() & 0xff;
+        b = in.read() & 0x7f;
         this.natureOfAddress = NatureOfAddress.valueOf(b);
         super.digits = this.encodingScheme.decode(in);
         } catch (IOException e) {
