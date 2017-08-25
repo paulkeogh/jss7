@@ -1164,7 +1164,8 @@ public class TCAPProviderImpl implements TCAPProvider, SccpListener {
 
         pdd.stopIdleTimer();
 
-        // TODO ??? : create Dialog and invoke "this.doRelease(di);"
+        DialogImpl di = new DialogImpl(null, null, 0, this._EXECUTOR, this, pdd, false);
+        this.doRelease(di);
     }
 
     @Override
